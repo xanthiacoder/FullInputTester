@@ -106,7 +106,7 @@ function love.draw()
   love.graphics.setFont(monoFont)
     
   -- draw joysticks data
-  love.graphics.print("--[ Joysticks ]--",FONT_WIDTH*0,FONT_HEIGHT*0)
+  love.graphics.print("--[ Joysticks ]--"..love.joystick.getJoystickCount(),FONT_WIDTH*0,FONT_HEIGHT*0)
 	if joystick ~= nil then -- not empty table, joystick(s) detected
 		for i = 1,#joystick do
 			love.graphics.print("Joystick "..i..": "..axisCount[i].." axes,"..buttonCount[i].." buttons, "..hatCount[i].." hats",FONT_WIDTH*0,FONT_HEIGHT*(i))
